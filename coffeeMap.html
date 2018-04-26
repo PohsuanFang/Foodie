@@ -4,15 +4,18 @@
         <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="coffee1mile.js"></script>
         <script src="coffeeshops.js"></script>
-        
+        <script src="restaurants1mile.js"></script>
+        <script src="restaurants.js"></script>
+        <script src="coffeeicon.png"></script>
         <script>
         
         function init(){
 //load the data first from the coffeeshop js file
         loaddata();
+        resDataLoad();
         var latlng=new google.maps.LatLng(42.359184,-71.093544);
         var myOptions={
-            zoom : 12,
+            zoom : 15,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -29,10 +32,29 @@
             new google.maps.Marker({
             position: new google.maps.LatLng(newCoffeinfo.lat,newCoffeinfo.lng),
             map: map,
-            title: newCoffeinfo.name})
+            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            // icon: getCircle(1),
+            title: newCoffeinfo.name}
+            )
             // console.log("setting marker coffeeList"+coffeeList)
             i++;
         });
+
+        var j=0;
+        var resInfo={};
+        resList.forEach(function(coordinate, index)
+        {
+            
+            resInfo=resList[j];
+
+            new google.maps.Marker({
+            position: new google.maps.LatLng(resInfo.lat,resInfo.lng),
+            map: map,
+            title: resInfo.name})
+           
+            j++;
+        });
+    
         };
         
         

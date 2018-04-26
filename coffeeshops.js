@@ -4,7 +4,7 @@ var coffeeList=[];
 var loaddata=function(){
     // console.log("loading datattttttt");
 
-    var i=0; 
+
     coffee.businesses.forEach(function(item)
     {
         var coffeeInfo={};

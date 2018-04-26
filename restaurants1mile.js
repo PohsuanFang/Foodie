@@ -2161,3 +2161,38 @@ var restaurants={
     }
 };
 
+var resList=[];
+var resDataLoad=function(){
+    restaurants.businesses.forEach(function(item)
+    {
+        var resInfo={};
+        resInfo.name=item["name"];
+        resInfo.lat=item["coordinates"]["latitude"];
+        resInfo.lng=item["coordinates"]["longitude"];
+        resInfo.id=item["id"];
+         resList.push(resInfo);
+
+    });
+};
+resDataLoad();
+var fs=require('fs');
+fs.writeFileSync('resCleaned.js',"var res="+JSON.stringify(resList));
+
+
+// console.log("'"+resList[1]['id']+"'");
+// 'use strict';
+
+
+// const yelp=require('yelp-fusion');
+// var fs=require('fs');
+// const apiKey = 'XnoaIud1Wk-oLzCjgP_OZUJ0VOrCs1iwgDoJUz0zcCtX2KdErFHCUozgOEIIVULzKYFQTxvdzivMqh8-3qhjUvIRd_zUFvdlXlPUlaskqIOHkTNqXktKWA3gSxPYWnYx';
+// const client = yelp.client(apiKey);
+// var search=function(id)
+// {
+
+// return client.business(id).then(response => {
+//     console.log(response.jsonBody);
+//   }).catch(e => {
+//     console.log(e);
+//   });};
+
