@@ -11,15 +11,15 @@ var resDataLoad=function(){
 
     });
 };
-var hourcheck=function(){
-    const yelp = require('yelp-fusion');
+// var hourcheck=function(){
+//     const yelp = require('yelp-fusion');
        
-        const apiKey = 'XnoaIud1Wk-oLzCjgP_OZUJ0VOrCs1iwgDoJUz0zcCtX2KdErFHCUozgOEIIVULzKYFQTxvdzivMqh8-3qhjUvIRd_zUFvdlXlPUlaskqIOHkTNqXktKWA3gSxPYWnYx';
-        client.business(resInfo.id).then(response => {
-            console.log(response.jsonBody.hours[0].open[0].start);
-          }).catch(e => {
-            console.log(e);
-          });}
+//         const apiKey = 'XnoaIud1Wk-oLzCjgP_OZUJ0VOrCs1iwgDoJUz0zcCtX2KdErFHCUozgOEIIVULzKYFQTxvdzivMqh8-3qhjUvIRd_zUFvdlXlPUlaskqIOHkTNqXktKWA3gSxPYWnYx';
+//         client.business(resInfo.id).then(response => {
+//             console.log(response.jsonBody.hours[0].open[0].start);
+//           }).catch(e => {
+//             console.log(e);
+//           });}
        
 
 
